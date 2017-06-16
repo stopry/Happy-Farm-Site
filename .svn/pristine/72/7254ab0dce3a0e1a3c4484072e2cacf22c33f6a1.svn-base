@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/hearder.css">
+    <link rel="stylesheet" href="./css/swiper-3.3.1.min.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>土地介绍</title>
+</head>
+<body style="background: #FFF;">
+<header id="header" class="newHeader">
+    <!--<div style="width: 1%;float: left"><</div>-->
+    <div onclick="location='index.html'" class="logo">
+        <img src="images/logo.png" style="height: 25px;margin-top: -10px;">
+    </div>
+    <div class="acctInfo">
+        <div onclick="location='grzx.html'" class="logined">用户中心</div>
+        <div onclick="location='index.html';oauth.clean()" class="loginOut">退出</div>
+    </div>
+</header>
+<main>
+    <div id="newContent">
+        <div class="land">
+            <div class=" title">土地介绍</div>
+            <hr>
+            <div class="menu">
+                <div class="m1" onclick="location='land.html'">游戏介绍</div>
+                <div class="m1" onclick="location='seed.html'">道具介绍</div>
+                <div class="m1" onclick="location='fruit.html'">玩法介绍</div>
+                <div class="m1" onclick="location='statue.html'">好友功能</div>
+            </div>
+            <div class="menu">
+                <div class="m1 active" onclick="location='land.html'">推广介绍</div>
+                <div class="m1" onclick="location='seed.html'">排行介绍</div>
+                <div class="m1" onclick="location='fruit.html'">神庙介绍</div>
+                <div class="m1" onclick="location='statue.html'">狗屋介绍</div>
+            </div>
+            <hr>
+            <div class="content">
+                <p class="jieshao">超级水稻游戏中，每位玩家共有12块土地，玩家只要满足等级和邀请好友数达到条件后，系统会赠送一块新的土地或是升级土地。</p>
+                <div class="detail">
+                    <div class="imgWrap">
+                        <img src="images/land1.png">
+                    </div>
+                    <div class="textWrap">
+                        <p>名称：黄土地</p>
+                        <p>介绍：普通的土地，收成无加成。</p>
+                        <p>产出：水稻。</p>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="imgWrap">
+                        <img src="images/land2.png">
+                    </div>
+                    <div class="textWrap">
+                        <p>名称：黄土地</p>
+                        <p>介绍：改良过的土地，收成增加5%。</p>
+                        <p>产出：水稻。</p>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="imgWrap">
+                        <img src="images/land3.png">
+                    </div>
+                    <div class="textWrap">
+                        <p>名称：黄土地</p>
+                        <p>介绍：少见的肥沃土地，收成增加10%。</p>
+                        <p>产出：水稻。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/plugin/swiper-3.3.1.min.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+</body>
+
+</html>
+<script>
+    $(function () {
+
+
+    });
+
+
+</script>

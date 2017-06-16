@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/global.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>新闻公告</title>
+</head>
+<body style="background: #fff;">
+<div id="screenlayer"></div>
+<div>
+    <div id="title" style="text-align: center;padding-top: 20px;font-size: 28px;">停机公告</div>
+    <div id="date" style="text-align: center;padding-top: 5px;font-size: 16px;">2017年4月8日</div>
+</div>
+<div id="content" style="margin-top: 30px;padding: 20px;font-size: 16px;">
+    停机公告停机公告停机公告停机公告停机公告停机公告停机公告停机公告停机公告停机公告停机公告停机公告停机公告
+</div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+</body>
+
+</html>
+<script>
+    $(function () {
+
+        var id=getUrlParam("id")
+
+        $.ajax({
+            type: 'GET',
+            url: url+'/api/notice/get?id='+id,
+            timeout : 10000,
+            contentType:"application/json;charset=UTF-8",
+            dataType: 'json',
+            success: function (result) {
+                if(result.success){
+
+                    $("#title").html(result.obj.title);
+                    $("#date").html(dd(result.obj.datetime));
+                    $("#content").html(result.obj.content);
+
+
+                }else {
+                    alert(result.msg);
+                }
+            },
+            error: function (info) {
+            },
+            complete: function (xhr, status) {
+
+            },
+            beforeSend: function(request){
+            }
+
+        });
+
+
+    });
+
+
+
+</script>

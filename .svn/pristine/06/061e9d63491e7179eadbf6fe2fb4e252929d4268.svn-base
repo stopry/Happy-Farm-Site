@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/global2.css">
+    <link rel="stylesheet" href="./css/swiper-3.3.1.min.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>神庙介绍</title>
+</head>
+<body style="background: #f8f8f8;">
+
+<!--页面加载动画-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+<div id="screenlayer"></div>
+<header id="idxheader">
+    <div class="conWrap">
+        <div class="myBaseInfo">
+            <img src="./images/user_headert.png" alt="">
+        </div>
+        <div class="textInfo">
+            <p class="name">超级水稻</p>
+            <p class="desc">香蕉儿荣誉出品</p>
+        </div>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="Util.goDownload()">立即下载</button>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="Util.goGame()" style="margin-right: 8px;">返回游戏</button>
+    </div>
+</header>
+<div class="slideBannner w100 ovhd">
+    <div class="swiper-container w100 h100">
+        <div class="swiper-wrapper w100 h100">
+            <div class="swiper-slide w100 h100">
+                <img src="./images/banner.png" alt="">
+            </div>
+            <div class="swiper-slide w100 h100">
+                <img src="./images/banner.png" alt="">
+            </div>
+            <div class="swiper-slide w100 h100">
+                <img src="./images/banner.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<main id="gameDesc" class="w100 ovhd">
+    <div class="gameDescWrap">
+        <dl class="gameDescWrapDl">
+            <h3 class="descTitle">
+                游戏介绍
+                <div  class="feedBtn toggleIcon open">
+                </div>
+            </h3>
+            <ul class="descListItemWrap open">
+                <li class="descItme feedBtn" onclick="location='/tdjs.html'">
+                    土地介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/djjs.html'">
+                    道具介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/wfjs.html'">
+                    玩法介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/hygn.html'">
+                    好友功能
+                </li>
+                <li class="descItme feedBtn" onclick="location='/tgjs.html'">
+                    推广介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/jyjs.html'">
+                    交易介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/phbjs.html'">
+                    排行榜介绍
+                </li>
+                <li class="descItme feedBtn active" onclick="location='/smjs.html'">
+                    神庙介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/gwjs.html'">
+                    狗屋介绍
+                </li>
+            </ul>
+        </dl>
+    </div>
+    <div class="gameDescWrap descT">
+        <dl class="gameDescWrapDl">
+            <h3 class="descTitle descT">
+                神庙介绍
+            </h3>
+            <div class="w100 descCon">
+                <div class="jieshao" >
+
+                    <p>可供奉上古时期四大神灵，以佑主人稻谷飘香，穰穰满家。详细玩法请主人在游戏里自行体验。新功能已开发完成，具体上线时间以公告为准。</p>
+                    <p>1：盘古</p>
+                    <p> 中国民间神话传说人物，《六韬·大明》云：“盘古之宗不可动也，动者必凶。”在昆仑山开天辟地，盘古神话叙事见于《三五历纪》、《五运历年记》、《述异记》等。[1]  盘古的化万物一说最早出现在南朝梁人任昉所作的《述异记》，最早形象见于《广博物志》和《乩仙天地判说》为龙首蛇身、人面蛇身。</p>
+                    <p> 2：伏羲</p>
+                    <p> 华夏民族人文先始、三皇之一，亦是与女娲同为福佑社稷之正神。楚帛书记载其为创世神，是目前中国最早的有文献记载的创世神。</p>
+                    <p>  3：女娲</p>
+                    <p>  中国上古神话中的创世女神。[1] 又称娲皇、女阴娘娘，史记女娲氏，是华夏民族人文先始，是福佑社稷之正神。相传女娲造人，一日中七十化变，以黄泥仿照自己抟土造人，创造人类社会并建立婚姻制度；因世间天塌地陷，于是熔彩石以补苍天，斩鳖足以立四极，留下了女娲补天的神话传说。</p>
+                    <p>   4：神农</p>
+                    <p>  即炎帝，踞今5500年至6000年前生于历山（今湖北随州市境内），中国远古传说中的太阳神。神农，又称神农氏，中国上古人物，有文字记载的出现时代在战国以后。被世人尊称为“药王”、“五谷王”、“五谷先帝”、“神农大帝”、"地皇"等。华夏太古三皇之一，传说中的农业和医药的发明者，他遍尝百草，有“神农尝百草”的传说，教人医疗与农耕，掌管医药及农业的神祇，能保佑农业收成、人民健康，更被医馆、药行视为守护神。
+
+                    </p>
+
+                </div>
+            </div>
+        </dl>
+    </div>
+</main>
+<footer id="footer" class="w100">
+    <div class="homeNav tc feedBtn" onclick="location='index.html'">
+        <img src="./images/home_0.png" class="disbl" alt="">
+        <p>游戏首页</p>
+    </div>
+    <div class="tuiguangNav tc feedBtn" onclick="location='news-list.html'">
+        <img src="./images/new_anno.png" class="disbl" alt="">
+        <p>新闻公告</p>
+    </div>
+    <div class="myNav tc feedBtn active" onclick="location='game-desc.html'">
+        <img src="./images/game_desc_0.png" class="disbl" alt="">
+        <p>游戏介绍</p>
+    </div>
+    <div class="myNav tc feedBtn" onclick="location='grzx.html'">
+        <img src="./images/person.png" class="disbl" alt="">
+        <p>个人中心</p>
+    </div>
+</footer>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/plugin/swiper-3.3.1.min.js"></script>
+<script src="./js/myModule.js"></script>
+
+<script src="./js/index.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+
+<script src="./js/global2.js"></script>
+<script src="./js/index2.js"></script>
+</body>
+
+</html>

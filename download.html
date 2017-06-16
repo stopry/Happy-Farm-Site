@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/global2.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>下载超级水稻</title>
+</head>
+<body class="porel" style="background: #f8f8f8 url(./images/download_bg.jpg) no-repeat center; background-size: 100% 100%;">
+<div id="screenlayer"></div>
+<header id="idxheader">
+    <div class="conWrap">
+        <div class="myBaseInfo">
+            <img src="./images/user_headert.png" alt="">
+        </div>
+        <div class="textInfo">
+            <p class="name">超级水稻</p>
+            <p class="desc">香蕉儿荣誉出品</p>
+        </div>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="Util.goGame()">返回游戏</button>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="location='./grzx.html'"  style="margin-right: 8px;">用户中心</button>
+    </div>
+</header>
+<div class="downloadTips poabl">
+    <img src="./images/browser_open_tips.png" alt="下载超级水稻">
+</div>
+<div class="downloadBtnWrap">
+    <img src="./images/ios_dowload.png" class="downloadBtn iosBtn feedBtn" alt="ios">
+    <img src="./images/android_down.png" class="downloadBtn androidBtn feedBtn" style="float: right" alt="android">
+</div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/layer/layer.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/global2.js"></script>
+<script>
+    $(function(){
+        var LOGINCHANNEL;
+        //得到登录渠道
+        function getChannel() {
+            var ua = window.navigator.userAgent.toLowerCase();//微信
+            var u = navigator.userAgent;//手机类型android或ios
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){//微信
+                LOGINCHANNEL = 'WX';
+                return;
+            }else{
+                LOGINCHANNEL = 'BR';
+            }
+        }
+        getChannel();
+        //打开提示遮罩层
+        function openTips(){
+            $('#screenlayer').show();
+            $('.downloadTips').show();
+            $("#idxheader").hide();
+        }
+        //关闭提示遮罩层
+        function closeTips(){
+            $('#screenlayer').hide();
+            $('.downloadTips').hide();
+            $("#idxheader").show();
+        }
+        //微信设备下载提示
+        function openInBro(downloadUrl){
+            if(LOGINCHANNEL=='WX'){
+                openTips();
+            }else{
+//                openTips();
+                window.location = downloadUrl;
+            }
+        }
+        $('#screenlayer').click(function(){
+            closeTips();
+        })
+        $('.iosBtn').click(function(){
+            layer.msg('IOS版本即将上线敬请期待');
+//            openInBro('http://center.0001wan.com/file/chaojishudao_01.000.0001.apk');
+        })
+        $('.androidBtn').click(function(){
+            openInBro('http://down.0001wan.com/chaojishudao_01.000.0001.apk');
+        })
+    });
+</script>
+</body>
+
+</html>

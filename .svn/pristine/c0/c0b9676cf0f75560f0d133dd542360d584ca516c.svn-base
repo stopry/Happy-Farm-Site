@@ -1,0 +1,226 @@
+.newHeader {
+    top: 0px;
+    position: fixed;
+    height: 45px;
+    background-color: #FFF;
+    width: 100%;
+    float: left;
+    border-bottom: solid 1px #DFDFDF;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.newHeader .logo {
+    width: 55%;
+    float: left;
+    line-height: 45px;
+    padding-left: 15px;
+    color: #FF7F00;
+    font-size: 18px;
+}
+
+.newHeader .acctInfo {
+    width: 40%;
+    float: left;
+    text-align: center;
+}
+
+.newHeader .acctInfo .logined {
+    width: 50%;
+    color: #FFF;
+    font-weight: 900;
+    float: left;
+    margin-left: 10%;
+    background-color: #FF6600;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 7px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.newHeader .acctInfo .loginOut {
+    width: 30%;
+    color: #FFF;
+    font-weight: 900;
+    float: left;
+    margin-right: 10%;
+    background-color: #53A0E3;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 7px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#newContent {
+    height: 100%;
+    margin-top: 48px;
+    width: 100%;
+    background-color: #FFF;
+}
+
+.gonggao {
+    height: 100%;
+    margin-top: 0.5rem;
+}
+
+.gonggao .gg {
+    width: 94%;
+    margin: 0.2rem 3% 0 3%;
+    color: #888888;
+    height: 6rem;
+}
+
+.gonggao .gg .title {
+    height: 1.5rem;
+    font-size: 0.5rem;
+    font-weight: 900;
+    background: none;
+}
+
+.gonggao .gg .content {
+    font-size: 0.3rem;
+    line-height: 0.8rem;
+    height: 3.5rem;
+    text-indent : 20px;
+}
+
+.gonggao .gg .bottom {
+    height: 1rem;
+    margin-top: 0.3rem;
+}
+.gonggao .gg .bottom .time{
+    margin-top: 0.2rem;
+    float: left;
+    width: 60%;
+}
+
+.gonggao .gg .bottom .btn{
+    float: left;
+    width: 40%;
+}
+
+.gonggao .gg .bottom .btn .lin{
+    height: 1rem;
+    background-color: #FF6601;
+    width: 60%;
+    float: right;
+    line-height: 1rem;
+    color: #FFF;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.youxijieshao {
+    width: 100%;
+}
+
+.youxijieshao .mainType{
+    width: 100%;
+    height: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.youxijieshao .mainType .mainTitle{
+    height: 1.3rem;
+    line-height: 1.3rem;
+    color: #FFF;
+    float: left;
+    width: 20%;
+    margin-left: 4%;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing:2px;
+}
+
+.youxijieshao .mainType .cen1{
+    background-color: #FF6601;
+}
+
+.youxijieshao .mainType .cen2{
+    background-color: #53A0E3;
+}
+
+.youxijieshao .mainType .cen3{
+    background-color: #F56363;
+}
+
+.youxijieshao .mainType .cen4{
+    background-color: #8C98B6;
+}
+
+.youxijieshao .jieshao{
+    text-indent : 20px;
+    line-height: 0.8rem;
+    padding: 0 4%;
+    color: #968888;
+}
+.youxijieshao .imgWrap{
+    width: 92%;
+    margin: 0.2rem 4% 0.2rem 4%;
+}
+
+.land{
+    width: 96%;
+    margin-left: 2%;
+    height: 100%;
+}
+
+.land .title{
+    color: #8C98B6;
+    font-size: 0.5rem;
+    font-weight: 900;
+    line-height: 1.5rem;
+    height: 1.5rem;
+}
+
+.land .menu{
+    width: 100%;
+}
+
+.land hr{
+    width: 100%;
+}
+.land .m1{
+    width: 20%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    color: #8C98B6;
+    float: left;
+    margin-left: 4%;
+}
+
+.land .active{    color: #FF6600;
+}
+
+.land .content{
+    color: #888888;
+}
+
+.land .content .jieshao{
+    text-indent: 20px;
+    line-height: 0.8rem;
+    margin: 0.4rem 0;
+}
+
+.land .content .detail{
+    width: 100%;
+    height: 3.5rem;
+}
+
+.land .content .detail .imgWrap{
+    width: 40%;
+    float: left;
+}
+.land .content .detail .imgWrap img{
+    width: 80%;
+}
+.land .content .detail .textWrap{
+    width: 60%;
+    float: left;
+}
+
+.land .content .detail .textWrap p{
+    line-height: 0.8rem;
+}

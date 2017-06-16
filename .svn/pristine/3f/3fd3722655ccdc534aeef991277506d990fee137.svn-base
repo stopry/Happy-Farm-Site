@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/global2.css">
+    <link rel="stylesheet" href="./css/swiper-3.3.1.min.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>好友功能</title>
+</head>
+<body style="background: #f8f8f8;">
+
+<!--页面加载动画-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+<div id="screenlayer"></div>
+<header id="idxheader">
+    <div class="conWrap">
+        <div class="myBaseInfo">
+            <img src="./images/user_headert.png" alt="">
+        </div>
+        <div class="textInfo">
+            <p class="name">超级水稻</p>
+            <p class="desc">香蕉儿荣誉出品</p>
+        </div>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="Util.goDownload()">立即下载</button>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="Util.goGame()" style="margin-right: 8px;">返回游戏</button>
+    </div>
+</header>
+<div class="slideBannner w100 ovhd">
+    <div class="swiper-container w100 h100">
+        <div class="swiper-wrapper w100 h100">
+            <div class="swiper-slide w100 h100">
+                <img src="./images/banner.png" alt="">
+            </div>
+            <div class="swiper-slide w100 h100">
+                <img src="./images/banner.png" alt="">
+            </div>
+            <div class="swiper-slide w100 h100">
+                <img src="./images/banner.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<main id="gameDesc" class="w100 ovhd">
+    <div class="gameDescWrap">
+        <dl class="gameDescWrapDl">
+            <h3 class="descTitle">
+                游戏介绍
+                <div  class="feedBtn toggleIcon open">
+                </div>
+            </h3>
+            <ul class="descListItemWrap open">
+                <li class="descItme feedBtn" onclick="location='/tdjs.html'">
+                    土地介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/djjs.html'">
+                    道具介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/wfjs.html'">
+                    玩法介绍
+                </li>
+                <li class="descItme feedBtn active" onclick="location='/hygn.html'">
+                    好友功能
+                </li>
+                <li class="descItme feedBtn" onclick="location='/tgjs.html'">
+                    推广介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/jyjs.html'">
+                    交易介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/phbjs.html'">
+                    排行榜介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/smjs.html'">
+                    神庙介绍
+                </li>
+                <li class="descItme feedBtn" onclick="location='/gwjs.html'">
+                    狗屋介绍
+                </li>
+            </ul>
+        </dl>
+    </div>
+    <div class="gameDescWrap descT">
+        <dl class="gameDescWrapDl">
+            <h3 class="descTitle descT">
+                好友功能
+            </h3>
+            <div class="w100 descCon">
+                <div class="jieshao" >
+                    <p>好友分两大块</p>
+                    <p>一：普通好友（可以删除）可通过每日一次一键添加好友，普通好友的稻谷可以偷取，每颗成熟的稻穗最多只可被偷取10%的稻谷。</p>
+                    <p>二：亲密好友（不可删除）里有两类，一是地主（此好友为游戏NPC，），二是邀请人和被邀请人（此类好友会分别在名字前缀上标注太阳与星星）。
+                    </p>
+                    <p>亲密好友</p>
+                    <img src="images/hy1.png"  style="width: 80%;height: 80%;padding-left: 25px;">
+                    <p>普通好友</p>
+                    <img src="images/hy2.png"  style="width: 80%;height: 80%;padding-left: 25px;">
+
+
+                </div>
+            </div>
+        </dl>
+    </div>
+</main>
+<footer id="footer" class="w100">
+    <div class="homeNav tc feedBtn" onclick="location='index.html'">
+        <img src="./images/home_0.png" class="disbl" alt="">
+        <p>游戏首页</p>
+    </div>
+    <div class="tuiguangNav tc feedBtn" onclick="location='news-list.html'">
+        <img src="./images/new_anno.png" class="disbl" alt="">
+        <p>新闻公告</p>
+    </div>
+    <div class="myNav tc feedBtn active" onclick="location='game-desc.html'">
+        <img src="./images/game_desc_0.png" class="disbl" alt="">
+        <p>游戏介绍</p>
+    </div>
+    <div class="myNav tc feedBtn" onclick="location='grzx.html'">
+        <img src="./images/person.png" class="disbl" alt="">
+        <p>个人中心</p>
+    </div>
+</footer>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/plugin/swiper-3.3.1.min.js"></script>
+<script src="./js/myModule.js"></script>
+
+<script src="./js/index.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+
+<script src="./js/global2.js"></script>
+<script src="./js/index2.js"></script>
+</body>
+
+</html>

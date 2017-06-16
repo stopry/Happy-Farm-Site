@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/hearder.css">
+    <link rel="stylesheet" href="./css/swiper-3.3.1.min.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>雕像介绍</title>
+</head>
+<body style="background: #FFF;">
+<header id="header" class="newHeader">
+    <!--<div style="width: 1%;float: left"><</div>-->
+    <div onclick="location='index.html'" class="logo">
+        <img src="images/logo.png" style="height: 25px;margin-top: -10px;">
+    </div>
+    <div class="acctInfo">
+        <div onclick="location='grzx.html'" class="logined">用户中心</div>
+        <div onclick="location='index.html';oauth.clean()" class="loginOut">退出</div>
+    </div>
+</header>
+<main>
+    <div id="newContent">
+        <div class="land">
+            <div class=" title">雕像介绍</div>
+            <hr>
+            <div class="menu">
+                <div class="m1" onclick="location='land.html'">土地介绍</div>
+                <div class="m1" onclick="location='seed.html'">种子介绍</div>
+                <div class="m1" onclick="location='fruit.html'">果实介绍</div>
+                <div class="m1 active" onclick="location='statue.html'">神像介绍</div>
+            </div>
+            <hr>
+            <div class="content">
+                <p class="jieshao">XXXXXXXXXXXXXXXXXXXXX。</p>
+                <div class="detail">
+                    <div class="imgWrap">
+                        <img src="images/statue_3_0.png" style="width: 50%;margin-left: 25%">
+                    </div>
+                    <div class="textWrap">
+                        <p>名称：劳模</p>
+                        <p>介绍：XXXXXXXX。</p>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="imgWrap">
+                        <img src="images/statue_2_0.png" style="width: 50%;margin-left: 25%">
+                    </div>
+                    <div class="textWrap">
+                        <p>名称：雷锋</p>
+                        <p>介绍：XXXXXXXX。</p>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="imgWrap">
+                        <img src="images/statue_1_0.png" style="width: 50%;margin-left: 25%">
+                    </div>
+                    <div class="textWrap">
+                        <p>名称：盗圣</p>
+                        <p>介绍：XXXXXXXX。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/plugin/swiper-3.3.1.min.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+</body>
+
+</html>
+<script>
+    $(function () {
+
+
+    });
+
+
+</script>

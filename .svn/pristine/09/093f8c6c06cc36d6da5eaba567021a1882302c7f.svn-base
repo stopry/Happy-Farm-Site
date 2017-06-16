@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/hearder.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <style rel="stylesheet">
+        html {
+            margin: 0 auto; }
+
+        * {
+            max-width: 500px; }
+        .orderInfo {
+            color: #888888;
+            width: 95%;
+            margin: 0 2.5%;
+            border: solid 1px #EFEFEF;
+            border-radius: 5px;
+        }
+
+        .orderInfo .list {
+            height: 1rem;
+            text-align: left;
+            line-height: 1rem;
+            font-size: 14px;
+            font-weight: 900;
+            text-indent: 10px;
+            border-bottom: solid 1px #EFEFEF;
+        }
+
+        .orderInfo .list #amount {
+            color: #FF6600;
+            font-size: 14px;
+
+        }
+
+        .orderInfo .list #goods {
+            font-size: 14px;
+            font-weight: 100;
+        }
+
+        .orderInfo .list #order {
+            font-size: 14px;
+            font-weight: 100;
+        }
+
+        .content {
+            height: 100%;
+            width: 100%;
+            margin-top: 48px;
+            padding-top: 0.5rem;
+        }
+
+        .scanCode {
+            width: 65%;
+            margin: 0.5rem 14.5%;
+        }
+
+        .scanCode #title {
+            height: 1rem;
+            background-color: #00A0E9;
+            color: #FFF;
+            line-height: 1rem;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .scanCode #qrCode {
+
+        }
+
+        .scanCode #readme {
+            height: 1rem;
+            background-color: #EFEFEF;
+            color: #FFF;
+            line-height: 1rem;
+            color: #888888;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        #qrCodeStr {
+            display: none;
+        }
+
+        .shuming {
+            width: 100%;
+        }
+
+        .shuming .detail {
+            width: 91%;
+            margin: 0 2.5%;
+            line-height: 0.6rem;
+            background-color: #F7FBFE;
+            padding: 0 2%;
+            color: #999999;
+        }
+    </style>
+    <title>支付宝扫码付</title>
+</head>
+<body style="background: #fff;">
+<header id="header" class="newHeader">
+    <!--<div style="width: 1%;float: left"><</div>-->
+    <div onclick="location='index.html'" class="logo">
+        <img src="images/logo.png" style="height: 25px;margin-top: -10px;">
+    </div>
+    <div class="acctInfo">
+        <div onclick="location='grzx.html'" class="logined">用户中心</div>
+        <div onclick="location='index.html';oauth.clean()" class="loginOut">退出</div>
+    </div>
+</header>
+
+<div class="content">
+
+    <div class="orderInfo">
+        <div class="list">商品名称&nbsp;:&nbsp;<span id="goods"></span></div>
+        <div class="list">订单编号&nbsp;:&nbsp;<span id="order"></span></div>
+        <div class="list">支付金额&nbsp;:&nbsp;<span id="amount"></span></div>
+    </div>
+    <div class="scanCode">
+        <!--<div id="title">点击打开支付宝APP进行支付</div>-->
+        <div id="qrCode"></div>
+        <div id="readme">使用支付宝扫描上方二维码</div>
+    </div>
+    <div class="shuming">
+        <p class="detail">温馨提示：<br/>
+            1.请确认支付信息后扫描上面的二维码完成支付<br/>
+            2.二维码有效时间为10分钟<br/>
+            3.如果您是在手机端操作，请先长按图片保存，然后进入支付宝扫一扫，从相册里找出刚才保存的图片<br/>
+            4.支付成功后请等待页面自动跳转<br/>
+        <p>
+    </div>
+</div>
+<div id="qrCodeStr"></div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.qrcode.min.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+
+<script>
+    $(function () {
+        var type = Util.getQueryString('type');
+        var cnt = Util.getQueryString('cnt');
+        var itemid = Util.getQueryString('itemid');
+        var paytype = Util.getQueryString('paytype');
+
+        var data = {
+            'type': type,
+            'cnt': cnt,
+            'itemid': itemid,
+            'paytype': paytype
+        };
+
+        ajaxHelper.get(urlMap.pay, data, function (result) {
+            if (result.success) {
+                jQuery('#qrCodeStr').qrcode({
+                    width: 800,
+                    height: 800,
+                    text: result.obj.qrCode
+                });
+                var mycanvas1 = document.getElementsByTagName('canvas')[0];
+
+                //将转换后的img标签插入到html中
+
+                var img = convertCanvasToImage(mycanvas1);
+
+                $('#qrCode').append(img);//imagQrDiv表示你要插入的容器id
+
+                $('#goods').html(result.obj.goods);
+                $('#order').html(result.obj.order);
+                $('#amount').html('￥' + Util.formatMoney(result.obj.amount, 2));
+                console.log(result.obj);
+            } else {
+                oauth.clean();
+                alert(result.msg);
+            }
+        });
+
+        function convertCanvasToImage(canvas) {
+            //新Image对象，可以理解为DOM
+            var image = new Image();
+            // canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
+            // 指定格式 PNG
+            image.src = canvas.toDataURL("image/png");
+            image.style.height = '100%'
+            image.style.width = '100%'
+            return image;
+        }
+    });
+
+
+    setInterval("queryOrder()", 2000);
+    function queryOrder() {
+        var data = {
+            'orderNo': $('#order').html()
+        }
+        ajaxHelper.get(urlMap.queryOrder, data, function (result) {
+            if (result.success) {
+                if (result.obj.status == 2) {
+                    window.location.href = "/pay/suc.html";
+                }
+            }
+        });
+    }
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html>
+<html style="background: #fff;">
+<head>
+    <meta charset=utf-8/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/global2.css">
+    <link rel="stylesheet" href="./css/hearder.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>推广</title>
+</head>
+<body style="background: #fff;">
+<style>
+    .tgmArea p{
+        font-size: 12px;
+        color: #999;
+    }
+    .tgmArea .h3{
+        font-size: 20px;
+        color: #666;
+        font-weight: normal;
+    }
+    .tgmArea .h3 span{
+        border: 1px solid #eee;
+        padding: 1px 10px;
+    }
+    .typeCon{
+        margin: 10px auto;
+    }
+</style>
+<header id="header" class="newHeader">
+    <!--<div style="width: 1%;float: left"><</div>-->
+    <div onclick="location='index.html'" class="logo">
+        <img src="images/logo.png" style="height: 25px;margin-top: -10px;">
+    </div>
+    <div class="acctInfo">
+        <div onclick="location='grzx.html'" class="logined">用户中心</div>
+        <div onclick="location='index.html';oauth.clean()" class="loginOut">退出</div>
+    </div>
+</header>
+<div id="content" style="margin-top: 48px;margin-bottom: 1.21875rem;">
+    <div class="Tjheader w100">
+        <p class="tTitle w100 tc">您的推广码为</p>
+        <h2 class="tgCode">
+            登陆后生成
+        </h2>
+        <div class="myTuijian tc">
+            <div class="tjItem">
+                <p class="tc w100 jt">***</p>
+                <p class="tc w100">静态收益</p>
+            </div>
+        </div>
+        <div class="tjWrap w100 ovhd">
+            <div class=" tjItem">
+                <p class="tc w100 ydn">***</p>
+                <p class="tc w100">一代好友</p>
+            </div>
+            <div class=" tjItem">
+                <p class="tc w100 edn">***</p>
+                <p class="tc w100">二代好友</p>
+            </div>
+            <div class=" tjItem">
+                <p class="tc w100 sdn">***</p>
+                <p class="tc w100">三代好友</p>
+            </div>
+        </div>
+    </div>
+    <h3 class="tuiguangTitle">
+        我要推广
+    </h3>
+    <!--<div class="tgmArea w100 ovhd tc">-->
+        <!--<p style="font-size: 16px;margin: 15px 0px">您的推荐码</p>-->
+        <!--<div class="h3" style="font-size: 30px">-->
+            <!--<span>*</span>-->
+            <!--<span>*</span>-->
+            <!--<span>*</span>-->
+            <!--<span>*</span>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="tgTypeTable">
+        <div class="tg_title">
+            <div class="typeTitle tl">
+                推广方式一:
+            </div>
+        </div>
+        <div>
+            <div class="tc typeCon">
+                <div id="imagQrDiv" class="tgEWM" style="margin: 0 auto;">
+
+                </div>
+                <!--<img src="./images/ewm.png" class="tgEWM" id="imagQrDiv"  alt="">-->
+                <p class="warmTips">温馨提示：发送您的二维码给好友，长按该二维码可注册。</p>
+            </div>
+        </div>
+        <div class="splitLine"></div>
+        <div class="tg_title">
+            <div class="typeTitle tl">
+                推广方式二:
+            </div>
+        </div>
+        <div>
+
+            <div class="typeCon tc">
+                <div class="fz-wrap">
+                    <div class="tgLink tl" id="url">登陆后生成推广链接</div>
+                    <div class="copyTgLink copy" id="copythis"><img class="feedBtn" src="./images/copyTgLinkBtn.png" alt=""></div>
+                </div>
+                <p class="warmTips">温馨提示：点击复制此条链接发送给该好友。</p>
+            </div>
+        </div>
+        <div class="splitLine"></div>
+        <div class="tg_title">
+            <div class="typeTitle tl">
+                推广方式三:
+            </div>
+        </div>
+        <div>
+            <div class="typeCon tc">
+                <div class="shareTg tl">
+                    点击分享 <img class="feedBtn shareBtn" src="./images/shareBtn.png" alt="">可分享到朋友圈或指定好友
+                </div>
+            </div>
+        </div>
+
+        <div class="splitLine"></div>
+        <div class="tg_title">
+            <div class="typeTitle tl">
+                已推广:
+            </div>
+        </div>
+        <div>
+
+            <div class="typeCon tc">
+                <div class="tgNum tl">
+                    <span class="numSz">0</span>人 <span style="color:#999;font-size: 12px;">(一代好友)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="splitLine"></div>
+    <h3 class="tuiguangTitle" style="border:none;">
+        推广列表
+    </h3>
+    <div class="friendChangeTable">
+        <div class="tableItem yd seled" data-type="1">
+            <img src="./images/oj.png" alt="">
+            一代好友 (<span class="ydTn">0</span>)
+        </div>
+        <div class="tableItem ed" data-type="2">
+            <img src="./images/toj.png" alt="">
+            二代好友 (<span class="edTn">*</span>)
+        </div>
+        <div class="tableItem sd" data-type="3">
+            <img src="./images/tj.png" alt="">
+            三代好友 (<span class="sdTn">*</span>)
+        </div>
+    </div>
+    <table class="tgListTable tgListTable1 active">
+        <tr class="tableHead">
+            <td>
+                ID1
+            </td>
+            <td>
+                用户名
+            </td>
+            <td>
+                注册时间
+            </td>
+        </tr>
+    </table>
+    <table class="tgListTable tgListTable2">
+        <tr class="tableHead">
+            <td>
+                ID2
+            </td>
+            <td>
+                用户名
+            </td>
+            <td>
+                注册时间
+            </td>
+        </tr>
+    </table>
+    <table class="tgListTable tgListTable3">
+        <tr class="tableHead">
+            <td>
+                ID3
+            </td>
+            <td>
+                用户名
+            </td>
+            <td>
+                注册时间
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="backGame fixedIcon" onclick="Util.goGame()">
+    <p>
+        返回<br/>
+        游戏
+    </p>
+</div>
+<img src="./images/topTopIcon.png" class="toTopBtn feedBtn fixedIcon" onclick="window.location='#'" alt="">
+<div id="qrcode" style="display: none"></div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/layer/layer.js"></script>
+<script src="./js/jquery.qrcode.min.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/clipboard.js"></script>
+</body>
+</html>
+<script>
+
+    var _three;//是否是领导人
+
+    $(function () {
+        ajaxHelper.get(urlMap.promoteUrl, {}, function (result) {
+            if (result.success) {
+                jQuery('#qrcode').qrcode({
+                    width: 800,
+                    height: 800,
+                    text: result.obj
+                });
+                var mycanvas1 = document.getElementsByTagName('canvas')[0];
+
+                //将转换后的img标签插入到html中
+
+                var img = convertCanvasToImage(mycanvas1);
+
+                $('#imagQrDiv').append(img);//imagQrDiv表示你要插入的容器id
+
+                $("#url").html(result.obj);
+
+                var tgser = '?'+(result.obj).split('?')[1];
+
+                function tgm(name) {
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                    var r = tgser.substr(1).match(reg);
+                    if (r != null)return (r[2]);
+                    return null;
+                }
+                tgser =  tgm('superId');
+                $('.tgCode').html(tgser)
+//                tgser = tgser.split('');
+//                var _html='';
+//                for(var k = 0;k<tgser.length;k++){
+//                    _html+="<span>"+tgser[k]+"</span> ";
+//                }
+//                $('.h3').html(_html);
+
+                $("#copytg").val(result.obj);
+                //getList();
+            } else {
+                oauth.clean();
+                layer.msg(result.msg);
+            }
+        });
+        //获取推广统计
+        ajaxHelper.get('/api/game/promote/getFruit',null,function(result){
+            if(!result.success){
+                oauth.clean();
+                layer.msg(result.msg);
+                return;
+            }else{
+
+                _three = result.obj.isthird==1?true:false;
+                if(!_three){
+                    $('.tjWrap .tjItem').eq(2).hide();
+                    $('.friendChangeTable .tableItem ').eq(2).hide();
+                }
+
+                var jt = result.obj.fruit+'个稻谷';
+                var yd = result.obj.sfruit+'个稻谷';
+                var ed = result.obj.ssfruit+'个稻谷';
+                var sd = result.obj.sssfruit+'个稻谷';
+                $('.jt').html(jt);
+                $('.ydn').html(yd);
+                $('.edn').html(ed);
+                $('.sdn').html(sd);
+            }
+        });
+
+        function convertCanvasToImage(canvas) {
+            //新Image对象，可以理解为DOM
+            var image = new Image();
+            // canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
+            // 指定格式 PNG
+            image.src = canvas.toDataURL("image/png");
+            image.style.height = '100%';
+            image.style.width = '100%';
+            return image;
+        }
+
+
+//        $("#copythis").click(function(){
+//            var Url2=document.getElementById("copytg");
+//            Url2.select(); // 选择对象
+//            document.execCommand("Copy"); // 执行浏览器复制命令
+////                     alert("已复制好，可贴粘。");
+//            layer.msg("内容已经复制到剪贴板！");
+//        });
+
+
+        var clipboard = new Clipboard('.copy', {
+            text: function () {
+                return $("#url").html();
+            }
+        });
+        clipboard.on('success', function (e) {
+            layer.msg("内容已经复制到剪贴板！");
+            console.log(e);
+        });
+
+        clipboard.on('error', function (e) {
+            layer.msg("复制失败，请重新复制！");
+            console.log(e);
+        });
+
+        var h = parseInt($(window).width());
+        //固定定位元素样式
+        function fixedObjStyle() {
+            var f_width = parseInt($('#footer').width());
+            $('#footer').css('left', (h - f_width) / 2 + 'px');
+        }
+
+        fixedObjStyle()
+    });
+    //推广列表
+    $(function(){
+
+        var type2IsFirst = true;//是否第一次加载
+        var type3IsFirst = true;
+
+        var fType = 1;//默认一代好友
+
+        $(".friendChangeTable .tableItem").click(function(){
+            $(this).addClass('seled').siblings('.tableItem').removeClass('seled');
+            var _type = $(this).data('type');
+            $(".tgListTable"+_type).show().siblings('.tgListTable').hide();
+
+            if(_type==2&&type2IsFirst){
+                listLoad.getData(1,2);
+                type2IsFirst = false;
+            }
+            if(_type==3&&type3IsFirst){
+                listLoad.getData(1,3);
+                type3IsFirst = false;
+            }
+
+            fType = _type;
+        });
+
+        function ListLoad(){};
+        //页面到达底部
+        ListLoad.prototype.pullBot = function(){
+            var wh = $(window).height();
+            var sct = $(window).scrollTop();
+            var dh = $(document).height();
+            if(wh+sct>dh-1){
+                //到达底部
+//                alert('ok');
+                return true;
+            }
+            //没有
+            return false;
+        };
+        var isLoading = false;
+        var pageNum = 1;
+        var pageNum2 = 1;
+        var pageNum3 = 1;
+        ListLoad.prototype.getData = function(pgnum,_fType){
+            _fType = _fType||fType;//好友类型
+            if(_fType==1){
+                var pgnum = pageNum||1;
+            }
+            if(_fType==2){
+                var pgnum = pageNum2||1;
+            }
+            if(_fType==3){
+                var pgnum = pageNum3||1;
+            }
+            var url = '/api/game/promote/getList';
+            var that = this;
+            if(!isLoading){
+                isLoading = true;
+                $.ajax({
+                    url:url,
+                    type:'GET',
+                    data:{pageNum:pgnum,lev:_fType},
+                    success:function(datas){
+                        console.log(datas);
+                        if(!datas.success){
+                            alert(datas.msg);
+                            return
+                        }
+                        var data = datas.obj.records
+                        console.log(data);
+                        if(_fType==1){
+                            $('.numSz').html( datas.obj.total);
+                            $('.ydTn').html(datas.obj.total);
+                        }
+                        if(_fType==2){
+                            $('.edTn').html(datas.obj.total);
+                        }
+                        if(_fType==3){
+                            $('.sdTn').html(datas.obj.total);
+                        }
+                        if(data.length){
+                            var _html = "";
+                            for(var i = 0;i<data.length;i++){
+                                _html+='<tr>'+
+                                    '<td>'+data[i].playerId+'</td>'+
+                                    '<td>'+data[i].nickname+'</td>'+
+                                    '<td>'+Util.formatDate(data[i].createTime)+'</td>'+
+                                '</tr>'
+                            }
+                            if(_fType==1){
+                                $(".tgListTable1").append(_html);
+                                pageNum++
+                            }
+                            if(_fType==2){
+                                $(".tgListTable2").append(_html);
+                                pageNum2++
+                            }
+                            if(_fType==3){
+                                $(".tgListTable3").append(_html);
+                                pageNum3++
+                            }
+
+                        }
+                        isLoading = false;
+                    },
+                    beforeSend: function (request) {
+                        request.setRequestHeader("Authorization", 'bearer ' + oauth.getToken());
+                    },
+                    error:function(){
+                        layer.confirm('亲爱的玩家，您尚未登陆', {
+                            btn: ['去登录','取消'] //按钮
+                        }, function(){
+                            window.location.href = '/login.html';
+                        }, function(){
+
+                        });
+                    }
+                })
+            }
+        };
+        var listLoad = new ListLoad();
+        listLoad.getData(1,1);
+        $(window).scroll(function(){
+            var isbot = listLoad.pullBot();
+            if(isbot){
+                listLoad.getData();
+            }
+        })
+    });
+    //底部固定定位元素样式
+    $(function(){
+        var w = parseInt($(window).width());
+        var iconW = parseInt($('.fixedIcon').width());
+        if(w>500){
+            $('.fixedIcon').css('left',(w+500)/2-iconW-20+'px');
+        }
+
+        $(window).resize(function(){
+            var w = parseInt($(window).width());
+            var iconW = parseInt($('.fixedIcon').width());
+            if(w>500){
+                $('.fixedIcon').css('left',(w+500)/2-iconW-20+'px');
+            }
+        })
+    });
+</script>

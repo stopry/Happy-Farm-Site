@@ -1,0 +1,751 @@
+//样式重置文件引入
+@import "../css/reset.css";
+/*公共变量设置*/
+//px->rem
+@function rem($n) {
+@return ($n/64)+rem;
+}
+//主色调
+$pricolor:#ffcc72;
+//辅助色
+$auxcolor:#ffd489;
+//关键色
+$keycolor:#ffaa16;
+//危险
+$dangercolor:#FF5656;
+//警告
+$warmingcolor:#FFB156;
+//labe颜色
+$labelcolor:#F1F1F1;
+//边框颜色
+$bordercolor:#E4E4E4;
+//主页标题文字颜色
+$titlecolr:#404040;
+//大标题颜色
+$bigtitlecolor:#242424;
+//money颜色
+$moneycolor:#f22f2f;
+//body颜色
+$bodybg:#F8F8F8;
+
+/*组件*/
+//大标题
+.bigTitle{
+    height: rem(58);
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    .con{
+        height: 100%;
+        width: rem(620);
+        line-height: rem(58);
+        box-sizing: border-box;
+        float: right;
+        border-width: 0;
+        border-bottom-width: 1px;
+        -webkit-border-image: url("../images/border.png") 2 2 stretch;
+        font-size: 16px;
+        color: $bigtitlecolor;
+    }
+}
+//数量加减组件
+.numOpr{
+    background: #fff;
+    display: flex;
+    width: rem(277);
+    height: rem(57);
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: rem(57);
+    box-sizing: border-box;
+    border: 1px solid #ffaa16;
+    border-radius: 3px;
+    overflow: hidden;
+    .numInpt{
+        border: none;
+        text-align: center;
+        display: block;
+        height: rem(57);
+        width: rem(165);
+        font-size: 20px;
+        color: #ffaa16;
+    }
+    .addLabel{
+        background: #ffaa16;
+        box-sizing: border-box;
+        height: 100%;
+        width: rem(57);
+        line-height: rem(57);
+        border-left: 1px solid #ffaa16;
+    }
+    .reduceLabel{
+        background: #ffaa16;
+        box-sizing: border-box;
+        height: 100%;
+        width: rem(57);
+        border-right: 1px solid #ffaa16;
+        line-height: rem(57);
+    }
+}
+//带标题的输入框组件
+.inputControl{
+    margin-bottom: rem(12);
+    width: 100%;
+    position: relative;
+    height: rem(60);
+    border: 1px solid #ffcc72;
+    border-radius: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+    .labelAdo{
+        overflow: hidden;
+        width: rem(131);
+        background: #ffcc72;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        line-height: rem(60);
+        box-sizing: border-box;
+        border-right: 1px solid #ffcc72;
+        position: absolute;
+        left: 0;
+        top:0;
+    }
+    .textInput{
+        border: none;
+        font-size: 14px;
+        text-indent: rem(20);
+        color: $titlecolr;
+        display: block;
+        position: absolute;
+        top:0;
+        left: rem(131);
+        height: rem(60);
+        width: rem(469);
+    }
+    .verLabelAdo{
+        background: #ffcc72;
+        width: rem(131);
+        color: #fff;
+        text-align: center;
+        line-height: rem(60);
+        font-size: 12px;
+        position: absolute;
+        right: 0;
+        top:0;
+    }
+}
+
+/*normal*/
+#screenlayer{//弹出层阴影
+    width: 100%;
+    background: rgba(0,0,0,.618);
+    height: 100%;
+    min-height: 800px;
+    position: fixed;
+    z-index: 9 !important;
+    display: none;
+}
+//首页
+#idxheader{
+    height: rem(94);
+    width: 100%;
+    background: $auxcolor;
+    overflow: hidden;
+    .conWrap{
+        height: 100%;
+        width: rem(614);
+        margin: 0 auto;
+        background: none;
+        .myBaseInfo{
+            margin-top: rem(8);
+            width: rem(68);
+            height: rem(68);
+            float: left;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .textInfo{
+            margin-top: rem(22);
+            height: rem(68);
+            float: left;
+            margin-left: rem(10);
+            color: $titlecolr;
+            .name{
+                font-size: 14px;
+                line-height: rem(24);
+            }
+            .desc{
+                font-size: 12px;
+                line-height: rem(24);
+            }
+        }
+        .downloadBtn{
+            width: rem(120);
+            box-sizing: border-box;
+            height: rem(45);
+            font-size: 14px;
+            line-height: rem(45);
+            border: 1px solid #fff;
+            border-radius: 3px;
+            margin-top: rem(22);
+        }
+    }
+}
+.slideBannner{
+    height: rem(291);
+    img{
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+#newsList{
+    background: $bodybg;
+    padding-bottom: rem(90);
+    .newListCon{
+        background: #fff;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: rem(10);
+        li.listItem{
+            width: rem(614);
+            margin: 0 auto;
+            .ItemTop{
+                margin-top: rem(9);
+                height:rem(70);
+                width: 100%;
+                .listText{
+                    width: rem(524);
+                    height: 100%;
+                    .ListTextTopT{
+                        .listTitle{
+                            color: $titlecolr;
+                            font-size: 14px;
+                            text-align: left;
+                        }
+                        .listType.annuonce{
+                            padding: rem(3) rem(10);
+                            border-radius: 12px;
+                            font-size: 12px;
+                            background: $dangercolor;
+                        }
+                        .listType.news{
+                            padding: rem(3) rem(10);
+                            border-radius: 12px;
+                            font-size: 12px;
+                            background: $warmingcolor;
+                        }
+                    }
+                    .listTextCon{
+                        font-size: 12px;
+                        color:$titlecolr;
+                    }
+                }
+                img.listImg{
+                    width: rem(66);
+                    height: rem(66);
+                }
+
+            }
+            .itemTime{
+                font-size: 12px;
+                color: #888;
+            }
+        }
+    }
+}
+#footer{
+    height: rem(78);
+    width: 100%;
+    background: $pricolor;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    div{
+        color: #fff;
+        flex: 1;
+        img{
+            width: rem(50);
+            height: rem(42);
+            margin: 0 auto;
+            margin-top: rem(5);
+        }
+        p{
+            color: #fff;
+            font-size: 12px;
+        }
+    }
+}
+//推广
+.tuiGunag{
+    height: rem(321);
+    background: url("../images/header_bg4.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.erweimaWrap{
+    min-height: rem(278);
+    padding-bottom: rem(15);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    background: #fff;
+    .erweimaWrapCon{
+        width: rem(602);
+        height: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+        .thisTitle{
+            font-size: 16px;
+            color: $titlecolr;
+            line-height: rem(56);
+        }
+        .imgWrap{
+            height: rem(134);
+            width: rem(134);
+            margin: rem(10) auto;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+.tgList{
+    margin-top: rem(10);
+    background: #fff;
+    padding-bottom: rem(30);
+    .tgListCon{
+        width: rem(602);
+        margin: 0 auto;
+        overflow: hidden;
+        .thisTitle{
+            font-size: 16px;
+            color: $titlecolr;
+            line-height: rem(56);
+            margin-top: rem(15);
+        }
+        .tgTable{
+            width: 100%;
+            text-align: center;
+            padding: rem(5) rem(10);
+            td{
+                border: 1px solid #ddd;
+            }
+        }
+    }
+}
+//农场提现
+.banner.ncTX{
+    width: 100%;
+    height: rem(320);
+    background: url("../images/header——bg.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.ncTxMain{
+    padding-bottom: rem(78);
+    background: #fff;
+    .ncTxMainCon{
+        width: rem(602);
+        margin: rem(18) auto;
+        background: #fff;
+    }
+    .propInfoLeft{
+        width: rem(184);
+        height: rem(184);
+        img{
+            width: 100%;
+            height:100%;
+        }
+    }
+    .propInfoRight{
+        width: rem(402);
+        .propInfoRightTop{
+            display: flex;
+            .maxBtn{
+                height:rem(57);
+                line-height: rem(57);
+                width: rem(66);
+                font-size: 14px;
+                color: #fff;
+                text-align: center;
+                margin-left: rem(10);
+                background: #ffaa16;
+                border: 1px solid #ffaa16;
+                border-radius: 3px;
+                box-sizing: border-box;
+            }
+            .inputDesc{
+                font-size: 16px;
+                color: #ffaa16;
+                line-height: rem(34);
+            }
+        }
+        .inputDesc
+        .propTitle{
+            font-size: 15px;
+            color: $titlecolr;
+            margin-top: rem(20);
+        }
+        .propDesc{
+            color: $titlecolr;
+            font-size: 12px;
+            line-height: rem(24);
+            height: rem(55);
+            overflow: hidden;
+            margin-top: rem(1);
+            margin-bottom: rem(0);
+        }
+        .propValue{
+            font-size: 14px;
+            color: $titlecolr;
+            span.moneyValue{
+                color: $moneycolor;
+            }
+        }
+    }
+    .doubleDesc{
+        margin-top: rem(6);
+    }
+    .formWrap{
+        margin-top: rem(30);
+    }
+}
+.userHeaderWrap{
+    margin-top: rem(60);
+    .imgWrap{
+        margin: 0 auto;
+        margin-bottom: rem(8);
+        width: rem(104);
+        height: rem(104);
+        border-radius: 50%;
+        box-sizing: border-box;
+        background: #f2f5e1;
+        border: 2px solid #fff;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .userName{
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+        img{
+            height: 16px;
+            width: 16px;
+            margin-bottom: 3px;
+        }
+    }
+    .userId{
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        margin-top: rem(5);
+        font-weight: normal;
+    }
+}
+.footerSubBtn{
+    width: 100%;
+    display: flex;
+    height: rem(78);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    line-height:rem(78);
+    .submit{
+        flex: 1;
+        background: $pricolor;
+    }
+    .cancel{
+        flex: 1;
+        background: $auxcolor;
+    }
+}
+.friendTips{
+    font-size: 12px;
+    color: #ccc;
+    margin: rem(25) auto rem(50) auto;
+}
+.addMoneyType{
+    .selItem{
+        height: rem(90);
+        width: rem(182);
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        float: left;
+        img{
+            display: none;
+            height: rem(30);
+            width: rem(30);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        &.seled{
+            border: 1px solid $warmingcolor;
+            img{
+                display: block;
+            }
+        }
+    }
+    .weChatAdd{
+        background: url("../images/wepay.png") no-repeat center;
+        background-size: 100% 100%;
+    }
+    .alipayAdd{
+        background: url("../images/alipay.png") no-repeat center;
+        background-size: 100% 100%;
+        margin-left: rem(28);
+    }
+    .ebaoAdd{
+        background: url("../images/epay.png") no-repeat center;
+        background-size: 100% 100%;
+        float: right;
+    }
+}
+.banner.ncBd{
+    background: url(../images/header_bg3.png) no-repeat center;
+    background-size: 100% 100%;
+}
+.banner.xgmm{
+    background: url(../images/header_bg2.png) no-repeat center;
+    background-size: 100% 100%;
+}
+#grzx{
+    .userHeaderWrap{
+        margin-left: rem(19);
+        margin-top: rem(80);
+    }
+    .userTextInfo{
+        margin-top: rem(15);
+        margin-left: rem(20);
+    }
+}
+.accountInfo{
+    width: rem(602);
+    height: rem(194);
+    position: relative;
+    border-radius: 12px;
+    left: rem(19);
+    top: rem(-83);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    background: #fff;
+    overflow: hidden;
+    .accountInfoTop{
+        height: rem(83);
+        box-sizing: border-box;
+        border-width: 0;
+        border-bottom-width: 1px;
+        -webkit-border-image: url("../images/border.png") 2 2 stretch;
+        display: flex;
+        vertical-align: middle;
+        .accountItem{
+            width: 33.333%;
+            flex: 1;
+            vertical-align: middle;
+            font-size: 12px;
+            color: $titlecolr;
+            .text{
+                margin-top: rem(6);
+            }
+            .valus{
+                font-size: 16px;
+                color: #777;
+            }
+        }
+    }
+    .accountInfoBot{
+        display: flex;
+        .botItem{
+            flex: 1;
+            width: 50%;
+            img{
+                width: rem(44);
+                margin-top: rem(20);
+            }
+            .desc{
+                color: $bigtitlecolor;
+                font-size: 12px;
+            }
+        }
+    }
+}
+.funList{
+    width: rem(602);
+    background: #fff;
+    margin: 0 auto;
+    margin-top: rem(-40);
+    height: 60px;
+    background: none;
+    .funListItem{
+        height: rem(60);
+        line-height: rem(60);
+        border-radius: 6px;
+        overflow: hidden;
+        border-bottom: 2px dashed #ddd ;
+        background: #fff;
+        .iconImg{
+            width: rem(18);
+            margin-left: rem(20);
+            margin-top: rem(21);
+        }
+        .ItemTitle{
+            font-size: 12px;
+            line-height: rem(60);
+            color: $titlecolr;
+            margin-left: rem(20);
+        }
+        .toIocn{
+            width: rem(9);
+            margin-right: rem(20);
+            margin-top: rem(22);
+        }
+        &:last-child{
+            border: none;
+        }
+    }
+}
+//账户明细
+.accountList{
+    .listItme{
+        margin-bottom: rem(10);
+        border-bottom: 1px solid #eee;
+        height: rem(120);
+        .proName{
+            font-size: 14px;
+            width: 25%;
+            height: rem(40);
+            line-height: rem(40);
+            color: $titlecolr;
+        }
+        .proPJg{
+            font-size: 14px;
+            width: 25%;
+            height: rem(40);
+            line-height: rem(40);
+            color: $titlecolr;
+            i{
+                color: $moneycolor;
+            }
+        }
+        .proNum{
+            font-size: 14px;
+            width: 25%;
+            height: rem(40);
+            line-height: rem(40);
+            color: $titlecolr;
+            i{
+                color: $moneycolor;
+            }
+        }
+        .proAllPay{
+            font-size: 14px;
+            width: 25%;
+            height: rem(40);
+            line-height: rem(40);
+            color: $titlecolr;
+            i{
+                color: $moneycolor;
+            }
+        }
+    }
+}
+.infoMid{
+    .charType{
+        width: 50%;
+        height: rem(40);
+        line-height: rem(40);
+        font-size: 14px;
+        color: $titlecolr;
+        i.type{
+            box-sizing: border-box;
+            border: 1px solid $keycolor;
+            color: $keycolor;
+            line-height: rem(30);
+            text-align: center;
+            border-radius: 3px;
+            padding: 0px 6px;
+        }
+    }
+    .charStatue{
+        width: 50%;
+        height: rem(40);
+        line-height: rem(40);
+        font-size: 14px;
+        color: $titlecolr;
+        i.statue{
+            line-height: rem(30);
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 3px;
+            padding: 0px 6px;
+            &.success{
+                border: 1px solid green;
+                color: green;
+            }
+            &false{
+                border: 1px solid #999;
+                color: #999;
+            }
+        }
+    }
+}
+.timeWrap{
+    .infoTime{
+        height: rem(40);
+        line-height: rem(45);
+        font-size: 12px;
+        color: #999;
+    }
+}
+#titlecon{
+    position: relative;
+    #type{
+        display: block;
+        height: 0.875rem;
+        width: 30%;
+        float: right;
+        color: #666;
+    }
+}
+.serchForm{
+    height: rem(110);
+    margin-bottom: 10px;
+    background: #fafafa;
+    .timeSel{
+        .timerCrl{
+            width: 50%;
+            border: none;
+            height: rem(60);
+            line-height: rem(60);
+            float: left;
+            box-sizing: border-box;
+            color: #666;
+            text-indent: 10px;
+            &.start{
+                text-align: left;
+                border-right: 1px solid #ddd;
+            }
+            &.stop{
+                text-align: right;
+            }
+        }
+        span.span{
+            height: rem(50);
+            color: #999;
+            line-height: rem(50);
+        }
+        &.timeSel2{
+            background: #eee;
+        }
+    }
+}

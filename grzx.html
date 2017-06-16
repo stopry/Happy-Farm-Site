@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html style="background: #fff;">
+<head>
+    <meta charset=utf-8/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/global2.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>个人中心</title>
+</head>
+<body style="background: #fff;">
+<div id="screenlayer"></div>
+
+<header id="idxheader">
+    <div class="conWrap">
+        <div class="myBaseInfo">
+            <img src="./images/user_headert.png" alt="">
+        </div>
+        <div class="textInfo">
+            <p class="name">超级水稻</p>
+            <p class="desc">香蕉儿荣誉出品</p>
+        </div>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="Util.goDownload()">立即下载</button>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="Util.goGame()" style="margin-right: 8px;">返回游戏</button>
+    </div>
+</header>
+
+<div id="grzx" class="banner ncTX w100 ovhd" style="background: url('./images/banner.png') no-repeat center;background-size:100% 100%;">
+    <div class="userHeaderWrap ovhd" style="margin-top: 2.35rem;">
+        <div class="imgWrap fl">
+            <img id="head" src="./images/userheader.png" alt="">
+        </div>
+        <div class="userTextInfo fl">
+            <div class="userName">
+                <SPAN ID="nickname"></SPAN>
+                <!--<img src="./images/femaile.png" alt="">-->
+            </div>
+            <p class="userId">ID <span id="playerid"></span>
+            </p>
+        </div>
+    </div>
+</div>
+<!--<div class="accountInfo">
+    <div class="accountInfoTop w100">
+        <div class="accountItem tc">
+            <p class="text">账户总额</p>
+            <p class="valus textOverDot" style="color:#ffaa16;font-size: 18px;">0</p>
+        </div>
+        <div class="accountItem tc">
+            <p class="text">可用金额</p>
+            <p class="valus" style="color:#ffaa16;font-size: 18px;">0</p>
+        </div>
+        <div class="accountItem tc">
+            <p class="text">冻结金额</p>
+            <p class="valus" style="color:#ffaa16;font-size: 18px;">0</p>
+        </div>
+    </div>
+    <div class="accountInfoBot w100">
+        <div class="botItem addMoney tc ovhd feedBtn" onclick="location='nccz.html'">
+            <img src="./images/add_money.png" alt="" style="width: 1.6875rem;">
+            &lt;!&ndash;<p class="desc tc">充值</p>&ndash;&gt;
+        </div>
+        <div class="botItem addMoney tc ovhd feedBtn" onclick="location='nctx.html'">
+            <img src="./images/cash.png" alt="" style="width: 1.6875rem;">
+            &lt;!&ndash;<p class="desc tc">提现</p>&ndash;&gt;
+        </div>
+    </div>
+</div>-->
+<div class="funList" style="margin-top: 1.2rem;">
+    <li class="w100 ovhd funListItem feedBtn" onclick="location='xgmm.html'">
+        <img src="./images/man_iocn.png" class="iconImg fl" alt="">
+        <span class="ItemTitle">修改密码</span>
+        <img src="./images/toIocn.png" class="toIocn fr" alt="">
+    </li>
+    <li class="w100 ovhd funListItem feedBtn" onclick="location='tuiguang.html'">
+        <img src="./images/mobile_icon.png" class="iconImg fl" alt="">
+        <span class="ItemTitle">我要推广</span>
+        <img src="./images/toIocn.png" class="toIocn fr" alt="">
+    </li>
+    <li class="w100 ovhd funListItem feedBtn" onclick="location='ncbd.html'">
+        <img src="./images/alipay_cion.png" class="iconImg fl" alt="">
+        <span class="ItemTitle">支付宝账号</span>
+        <img src="./images/toIocn.png" class="toIocn fr" alt="">
+    </li>
+    <li class="w100 ovhd funListItem feedBtn" onclick="location='zhmx.html'">
+        <img src="./images/account_detail.png" class="iconImg fl" alt="">
+        <span class="ItemTitle">购买明细</span>
+        <img src="./images/toIocn.png" class="toIocn fr" alt="">
+    </li>
+</div>
+<footer id="footer" class="w100">
+    <div class="homeNav tc feedBtn" onclick="location='index.html'">
+        <img src="./images/home_0.png" class="disbl" alt="">
+        <p>游戏首页</p>
+    </div>
+    <div class="tuiguangNav tc feedBtn" onclick="location='news-list.html'">
+        <img src="./images/new_anno.png" class="disbl" alt="">
+        <p>新闻公告</p>
+    </div>
+    <div class="myNav tc feedBtn" onclick="location='game-desc.html'">
+        <img src="./images/game_desc.png" class="disbl" alt="">
+        <p>游戏介绍</p>
+    </div>
+    <div class="myNav tc feedBtn active" onclick="location='###'">
+        <img src="./images/person_0.png" class="disbl" alt="">
+        <p>个人中心</p>
+    </div>
+</footer>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/layer/layer.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/global2.js"></script>
+<script src="./js/common.js"></script>
+</body>
+</html>
+<script>
+    $(function () {
+        ajaxHelper.post(urlMap.centerUrl, {}, function (result) {
+            if (result.success) {
+                $("#nickname").html(result.obj.nickname);
+                $("#playerid").html(result.obj.playerId);
+                $("#head").attr("src", "./images/head/head" + result.obj.pic + ".png");
+            } else {
+                oauth.clean();
+                alert(result.msg);
+            }
+        });
+        //窗口宽度
+        var h = parseInt( $(window).width());
+        //固定定位元素样式
+        function fixedObjStyle(){
+            var f_width = parseInt($('#footer').width());
+            $('#footer').css('left',(h-f_width)/2+'px');
+        }
+        fixedObjStyle()
+    });
+
+
+</script>

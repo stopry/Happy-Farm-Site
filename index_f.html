@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/hearder.css">
+    <link rel="stylesheet" href="./css/swiper-3.3.1.min.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>首页</title>
+</head>
+<body style="background: #f8f8f8;">
+<header id="header" class="newHeader">
+    <!--<div style="width: 1%;float: left"><</div>-->
+    <div onclick="location='index.html'" class="logo">
+        <img src="images/logo.png" style="height: 25px;margin-top: -10px;">
+    </div>
+    <div class="acctInfo">
+        <div onclick="location='grzx.html'" class="logined">用户中心</div>
+        <div onclick="location='index.html';oauth.clean()" class="loginOut">退出</div>
+    </div>
+</header>
+<main>
+    <div id="newContent">
+        <!--页面加载动画-->
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+        <div id="screenlayer"></div>
+        <div class="slideBannner w100 ovhd">
+            <div class="swiper-container w100 h100">
+                <div class="swiper-wrapper w100 h100">
+                    <div class="swiper-slide w100 h100">
+                        <img src="./images/banner.png" alt="">
+                    </div>
+                    <div class="swiper-slide w100 h100">
+                        <img src="./images/banner.png" alt="">
+                    </div>
+                    <div class="swiper-slide w100 h100">
+                        <img src="./images/banner.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 公 告 -->
+        <div class="gonggao">
+
+        </div>
+
+        <!-- 游戏介绍 -->
+        <div class="youxijieshao">
+            <div class="mainType">
+                <div class="mainTitle cen1" onclick="location='land.html'">土地介绍</div>
+                <div class="mainTitle cen2" onclick="location='seed.html'">种子介绍</div>
+                <div class="mainTitle cen3" onclick="location='fruit.html'">果实介绍</div>
+                <div class="mainTitle cen4" onclick="location='statue.html'">雕像价绍</div>
+            </div>
+            <div>
+                <img src="images/jiashaojeitu.png" class="imgWrap">
+            </div>
+            <div class="jieshao">
+                <p>
+                    超级水稻是一款以农场为背景的模拟经营类游戏，游戏于2016年8月8日正式与玩家见面。大家都知道现在越来越多的玩家更喜欢玩游戏赚钱，那么超级水稻游戏将创造一个新的游戏体制，赚钱玩游戏来满足日益增长想玩游戏的玩家们的需求，超级水稻主要是以农场土地种植为背景的模拟经营游戏。</p>
+                <p>
+                    游戏中，玩家扮演一个农场的经营者完成从购买种子到耕种、浇水、施肥、除草、收获果实，再到出售给市场的整个过程。游戏模拟了作物的成长过程，所以玩家在经营农场的同时，可以感受“作物养成”带来的乐趣。游戏中，玩家可以可对房屋、土地等进行升级，获得更加强大、高效的农场。
+                </p>
+                <p>游戏中还有很多其他惊喜等待您的发现！</p>
+
+            </div>
+        </div>
+        <!--<main id="newsList" class="w100 ovhd">
+
+
+        </main>-->
+    </div>
+    <input id="pageNum" type="hidden" value="1">
+</main>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/plugin/swiper-3.3.1.min.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+</body>
+
+</html>
+<script>
+    $(function () {
+        var pageNum = $("#pageNum").val();
+
+        var data = {
+            'pageNum': pageNum
+        };
+
+
+        ajaxHelper.get(urlMap.noticeUrl, data, function (result) {
+            if (result.success) {
+                for (var i = 0; i < 2; i++) {
+                    var html = '<div class="gg">' +
+                        '<h1 class="title">' + result.obj.records[i].title + '</h1>' +
+                        '<p class="content">' + result.obj.records[i].content + '</p>' +
+                        '<div class="bottom">' +
+                        '<div class="time">' + Util.formatDate(result.obj.records[i].datetime) + '</div>' +
+                        '<div class="btn">' +
+                        '<div class="lin">查看更多</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                    $(".gonggao").append(html)
+                }
+            } else {
+                oauth.clean();
+                alert(result.msg);
+            }
+        });
+    });
+
+
+</script>

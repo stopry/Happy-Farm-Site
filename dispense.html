@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html style="background: #fff;">
+<head>
+    <title>超级水稻</title>
+</head>
+<body style="background: #fff;">
+
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+</body>
+</html>
+<script>
+    window.history.replaceState({},document.title,'')
+    $(function () {
+        function autoLogin() {
+            var sign = Util.getQueryString('sign');
+            if (!sign || sign == '') {
+                window.location.replace('/login.html')
+            }
+            ajaxHelper.get(urlMap.oauthAttestationSign, {sign: sign}, function (result) {
+                if (!result.success) {
+                    alert('签名已过期，请重新登陆');
+                    window.location.replace('/login.html');
+                    return;
+                }
+                var toUrl = Util.getQueryString('toUrl');
+                oauth.setToken(result.obj);
+                if (!toUrl || toUrl == '') {
+                    window.location = '/index.html';
+                } else {
+                    var paras = Util.getQueryParam();
+                    var queryStr = '';
+                    if (paras) {
+                        queryStr += '?';
+                        for (var i = 0; i < paras.length; i++) {
+                            if (paras[i].key != 'toUrl' && paras[i].key != 'sign') {
+                                queryStr += paras[i].key + '=' + paras[i].val+'&';
+                            }
+                        }
+                        queryStr = queryStr.substr(0, queryStr.length - 1);
+                    }
+                    window.location.replace('/' + toUrl + queryStr);
+                }
+            });
+        }
+        autoLogin();
+    })
+
+</script>

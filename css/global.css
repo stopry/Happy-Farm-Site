@@ -1,0 +1,611 @@
+@charset "UTF-8";
+@import url(../css/reset.css);
+/*公共变量设置*/
+/*组件*/
+.bigTitle {
+  height: 0.90625rem;
+  width: 100%;
+  overflow: hidden;
+  background: #fff; }
+  .bigTitle .con {
+    height: 100%;
+    width: 9.6875rem;
+    line-height: 0.90625rem;
+    box-sizing: border-box;
+    float: right;
+    border-width: 0;
+    border-bottom-width: 1px;
+    -webkit-border-image: url("../images/border.png") 2 2 stretch;
+    font-size: 16px;
+    color: #242424; }
+
+.numOpr {
+  background: #fff;
+  display: flex;
+  width: 4.32813rem;
+  height: 0.89063rem;
+  font-size: 22px;
+  color: #fff;
+  text-align: center;
+  line-height: 0.89063rem;
+  box-sizing: border-box;
+  border: 1px solid #ffaa16;
+  border-radius: 3px;
+  overflow: hidden; }
+  .numOpr .numInpt {
+    border: none;
+    text-align: center;
+    display: block;
+    height: 0.89063rem;
+    width: 2.57813rem;
+    font-size: 20px;
+    color: #ffaa16; }
+  .numOpr .addLabel {
+    background: #ffaa16;
+    box-sizing: border-box;
+    height: 100%;
+    width: 0.89063rem;
+    line-height: 0.89063rem;
+    border-left: 1px solid #ffaa16; }
+  .numOpr .reduceLabel {
+    background: #ffaa16;
+    box-sizing: border-box;
+    height: 100%;
+    width: 0.89063rem;
+    border-right: 1px solid #ffaa16;
+    line-height: 0.89063rem; }
+
+.inputControl {
+  margin-bottom: 0.1875rem;
+  width: 100%;
+  position: relative;
+  height: 0.9375rem;
+  border: 1px solid #ffcc72;
+  border-radius: 5px;
+  overflow: hidden;
+  box-sizing: border-box; }
+  .inputControl .labelAdo {
+    overflow: hidden;
+    width: 2.04688rem;
+    background: #ffcc72;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 0.9375rem;
+    box-sizing: border-box;
+    border-right: 1px solid #ffcc72;
+    position: absolute;
+    left: 0;
+    top: 0; }
+  .inputControl .textInput {
+    border: none;
+    font-size: 14px;
+    text-indent: 0.3125rem;
+    color: #404040;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 2.04688rem;
+    height: 0.9375rem;
+    width: 7.32813rem; }
+  .inputControl .verLabelAdo {
+    background: #ffcc72;
+    width: 2.04688rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.9375rem;
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 0; }
+
+/*normal*/
+#screenlayer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.618);
+  height: 100%;
+  min-height: 800px;
+  position: fixed;
+  z-index: 9 !important;
+  display: none; }
+
+#idxheader {
+  height: 1.46875rem;
+  width: 100%;
+  background: #ffd489;
+  overflow: hidden; }
+  #idxheader .conWrap {
+    height: 100%;
+    width: 9.59375rem;
+    margin: 0 auto;
+    background: none; }
+    #idxheader .conWrap .myBaseInfo {
+      margin-top: 0.125rem;
+      width: 1.0625rem;
+      height: 1.0625rem;
+      float: left;
+      overflow: hidden; }
+      #idxheader .conWrap .myBaseInfo img {
+        width: 100%;
+        height: 100%; }
+    #idxheader .conWrap .textInfo {
+      margin-top: 0.34375rem;
+      height: 1.0625rem;
+      float: left;
+      margin-left: 0.15625rem;
+      color: #404040; }
+      #idxheader .conWrap .textInfo .name {
+        font-size: 14px;
+        line-height: 0.375rem; }
+      #idxheader .conWrap .textInfo .desc {
+        font-size: 12px;
+        line-height: 0.375rem; }
+    #idxheader .conWrap .downloadBtn {
+      width: 1.875rem;
+      box-sizing: border-box;
+      height: 0.70313rem;
+      font-size: 14px;
+      line-height: 0.70313rem;
+      border: 1px solid #fff;
+      border-radius: 3px;
+      margin-top: 0.34375rem; }
+
+.slideBannner {
+  height: 4.54688rem; }
+  .slideBannner img {
+    width: 100%;
+    height: 100%;
+    border: none; }
+
+#newsList {
+  background: #F8F8F8;
+  padding-bottom: 1.40625rem; }
+  #newsList .newListCon {
+    background: #fff;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 0.15625rem; }
+    #newsList .newListCon li.listItem {
+      width: 9.59375rem;
+      margin: 0 auto; }
+      #newsList .newListCon li.listItem .ItemTop {
+        margin-top: 0.14063rem;
+        height: 1.09375rem;
+        width: 100%; }
+        #newsList .newListCon li.listItem .ItemTop .listText {
+          width: 8.1875rem;
+          height: 100%; }
+          #newsList .newListCon li.listItem .ItemTop .listText .ListTextTopT .listTitle {
+            color: #404040;
+            font-size: 14px;
+            text-align: left; }
+          #newsList .newListCon li.listItem .ItemTop .listText .ListTextTopT .listType.annuonce {
+            padding: 0.04688rem 0.15625rem;
+            border-radius: 12px;
+            font-size: 12px;
+            background: #FF5656; }
+          #newsList .newListCon li.listItem .ItemTop .listText .ListTextTopT .listType.news {
+            padding: 0.04688rem 0.15625rem;
+            border-radius: 12px;
+            font-size: 12px;
+            background: #FFB156; }
+          #newsList .newListCon li.listItem .ItemTop .listText .listTextCon {
+            font-size: 12px;
+            color: #404040; }
+        #newsList .newListCon li.listItem .ItemTop img.listImg {
+          width: 1.03125rem;
+          height: 1.03125rem; }
+      #newsList .newListCon li.listItem .itemTime {
+        font-size: 12px;
+        color: #888; }
+
+#footer {
+  height: 1.21875rem;
+  width: 100%;
+  background: #ffcc72;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex; }
+  #footer div {
+    color: #fff;
+    flex: 1; }
+    #footer div img {
+      width: 0.78125rem;
+      height: 0.65625rem;
+      margin: 0 auto;
+      margin-top: 0.07813rem; }
+    #footer div p {
+      color: #fff;
+      font-size: 12px; }
+
+.tuiGunag {
+  height: 5.01563rem;
+  background: url("../images/header_bg4.png") no-repeat center;
+  background-size: 100% 100%; }
+
+.erweimaWrap {
+  min-height: 4.34375rem;
+  padding-bottom: 0.23438rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  background: #fff; }
+  .erweimaWrap .erweimaWrapCon {
+    width: 9.40625rem;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto; }
+    .erweimaWrap .erweimaWrapCon .thisTitle {
+      font-size: 16px;
+      color: #404040;
+      line-height: 0.875rem; }
+    .erweimaWrap .erweimaWrapCon .imgWrap {
+      height: 2.09375rem;
+      width: 2.09375rem;
+      margin: 0.15625rem auto; }
+      .erweimaWrap .erweimaWrapCon .imgWrap img {
+        width: 100%;
+        height: 100%; }
+
+.tgList {
+  margin-top: 0.15625rem;
+  background: #fff;
+  padding-bottom: 0.46875rem; }
+  .tgList .tgListCon {
+    width: 9.40625rem;
+    margin: 0 auto;
+    overflow: hidden; }
+    .tgList .tgListCon .thisTitle {
+      font-size: 16px;
+      color: #404040;
+      line-height: 0.875rem;
+      margin-top: 0.23438rem; }
+    .tgList .tgListCon .tgTable {
+      width: 100%;
+      text-align: center;
+      padding: 0.07813rem 0.15625rem; }
+      .tgList .tgListCon .tgTable td {
+        border: 1px solid #ddd; }
+
+.banner.ncTX {
+  width: 100%;
+  height: 5rem;
+  background: url("../images/header——bg.png") no-repeat center;
+  background-size: 100% 100%; }
+
+.ncTxMain {
+  padding-bottom: 1.21875rem;
+  background: #fff; }
+  .ncTxMain .ncTxMainCon {
+    width: 9.40625rem;
+    margin: 0.28125rem auto;
+    background: #fff; }
+  .ncTxMain .propInfoLeft {
+    width: 2.875rem;
+    height: 2.875rem; }
+    .ncTxMain .propInfoLeft img {
+      width: 100%;
+      height: 100%; }
+  .ncTxMain .propInfoRight {
+    width: 6.28125rem; }
+    .ncTxMain .propInfoRight .propInfoRightTop {
+      display: flex; }
+      .ncTxMain .propInfoRight .propInfoRightTop .maxBtn {
+        height: 0.89063rem;
+        line-height: 0.89063rem;
+        width: 1.03125rem;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        margin-left: 0.15625rem;
+        background: #ffaa16;
+        border: 1px solid #ffaa16;
+        border-radius: 3px;
+        box-sizing: border-box; }
+      .ncTxMain .propInfoRight .propInfoRightTop .inputDesc {
+        font-size: 16px;
+        color: #ffaa16;
+        line-height: 0.53125rem; }
+    .ncTxMain .propInfoRight .inputDesc
+.propTitle {
+      font-size: 15px;
+      color: #404040;
+      margin-top: 0.3125rem; }
+    .ncTxMain .propInfoRight .propDesc {
+      color: #404040;
+      font-size: 12px;
+      line-height: 0.375rem;
+      height: 0.85938rem;
+      overflow: hidden;
+      margin-top: 0.01563rem;
+      margin-bottom: 0rem; }
+    .ncTxMain .propInfoRight .propValue {
+      font-size: 14px;
+      color: #404040; }
+      .ncTxMain .propInfoRight .propValue span.moneyValue {
+        color: #f22f2f; }
+  .ncTxMain .doubleDesc {
+    margin-top: 0.09375rem; }
+  .ncTxMain .formWrap {
+    margin-top: 0.46875rem; }
+
+.userHeaderWrap {
+  margin-top: 0.9375rem; }
+  .userHeaderWrap .imgWrap {
+    margin: 0 auto;
+    margin-bottom: 0.125rem;
+    width: 1.625rem;
+    height: 1.625rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: #f2f5e1;
+    border: 2px solid #fff;
+    overflow: hidden; }
+    .userHeaderWrap .imgWrap img {
+      width: 100%;
+      height: 100%; }
+  .userHeaderWrap .userName {
+    text-align: center;
+    font-size: 16px;
+    color: #fff; }
+    .userHeaderWrap .userName img {
+      height: 16px;
+      width: 16px;
+      margin-bottom: 3px; }
+  .userHeaderWrap .userId {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0.07813rem;
+    font-weight: normal; }
+
+.footerSubBtn {
+  width: 100%;
+  display: flex;
+  height: 1.21875rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.21875rem; }
+  .footerSubBtn .submit {
+    flex: 1;
+    background: #ffcc72; }
+  .footerSubBtn .cancel {
+    flex: 1;
+    background: #ffd489; }
+
+.friendTips {
+  font-size: 12px;
+  color: #ccc;
+  margin: 0.39063rem auto 0.78125rem auto; }
+
+.addMoneyType .selItem {
+  height: 1.40625rem;
+  width: 2.84375rem;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  float: left; }
+  .addMoneyType .selItem img {
+    display: none;
+    height: 0.46875rem;
+    width: 0.46875rem;
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+  .addMoneyType .selItem.seled {
+    border: 1px solid #FFB156; }
+    .addMoneyType .selItem.seled img {
+      display: block; }
+
+.addMoneyType .weChatAdd {
+  background: url("../images/wepay.png") no-repeat center;
+  background-size: 100% 100%; }
+
+.addMoneyType .alipayAdd {
+  background: url("../images/alipay.png") no-repeat center;
+  background-size: 100% 100%;
+  margin-left: 0.4375rem; }
+
+.addMoneyType .ebaoAdd {
+  background: url("../images/epay.png") no-repeat center;
+  background-size: 100% 100%;
+  float: right; }
+
+.banner.ncBd {
+  background: url(../images/header_bg3.png) no-repeat center;
+  background-size: 100% 100%; }
+
+.banner.xgmm {
+  background: url(../images/header_bg2.png) no-repeat center;
+  background-size: 100% 100%; }
+
+#grzx .userHeaderWrap {
+  margin-left: 0.29688rem;
+  margin-top: 1.25rem; }
+
+#grzx .userTextInfo {
+  margin-top: 0.23438rem;
+  margin-left: 0.3125rem; }
+
+.accountInfo {
+  width: 9.40625rem;
+  height: 3.03125rem;
+  position: relative;
+  border-radius: 12px;
+  left: 0.29688rem;
+  top: -1.29688rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden; }
+  .accountInfo .accountInfoTop {
+    height: 1.29688rem;
+    box-sizing: border-box;
+    border-width: 0;
+    border-bottom-width: 1px;
+    -webkit-border-image: url("../images/border.png") 2 2 stretch;
+    display: flex;
+    vertical-align: middle; }
+    .accountInfo .accountInfoTop .accountItem {
+      width: 33.333%;
+      flex: 1;
+      vertical-align: middle;
+      font-size: 12px;
+      color: #404040; }
+      .accountInfo .accountInfoTop .accountItem .text {
+        margin-top: 0.09375rem; }
+      .accountInfo .accountInfoTop .accountItem .valus {
+        font-size: 16px;
+        color: #777; }
+  .accountInfo .accountInfoBot {
+    display: flex; }
+    .accountInfo .accountInfoBot .botItem {
+      flex: 1;
+      width: 50%; }
+      .accountInfo .accountInfoBot .botItem img {
+        width: 0.6875rem;
+        margin-top: 0.3125rem; }
+      .accountInfo .accountInfoBot .botItem .desc {
+        color: #242424;
+        font-size: 12px; }
+
+.funList {
+  width: 9.40625rem;
+  background: #fff;
+  margin: 0 auto;
+  margin-top: -0.625rem;
+  height: 60px;
+  background: none; }
+  .funList .funListItem {
+    height: 0.9375rem;
+    line-height: 0.9375rem;
+    border-radius: 6px;
+    overflow: hidden;
+    border-bottom: 2px dashed #ddd;
+    background: #fff; }
+    .funList .funListItem .iconImg {
+      width: 0.28125rem;
+      margin-left: 0.3125rem;
+      margin-top: 0.32813rem; }
+    .funList .funListItem .ItemTitle {
+      font-size: 12px;
+      line-height: 0.9375rem;
+      color: #404040;
+      margin-left: 0.3125rem; }
+    .funList .funListItem .toIocn {
+      width: 0.14063rem;
+      margin-right: 0.3125rem;
+      margin-top: 0.34375rem; }
+    .funList .funListItem:last-child {
+      border: none; }
+
+.accountList .listItme {
+  margin-bottom: 0.15625rem;
+  border-bottom: 1px solid #eee;
+  height: 1.875rem; }
+  .accountList .listItme .proName {
+    font-size: 14px;
+    width: 25%;
+    height: 0.625rem;
+    line-height: 0.625rem;
+    color: #404040; }
+  .accountList .listItme .proPJg {
+    font-size: 14px;
+    width: 25%;
+    height: 0.625rem;
+    line-height: 0.625rem;
+    color: #404040; }
+    .accountList .listItme .proPJg i {
+      color: #f22f2f; }
+  .accountList .listItme .proNum {
+    font-size: 14px;
+    width: 25%;
+    height: 0.625rem;
+    line-height: 0.625rem;
+    color: #404040; }
+    .accountList .listItme .proNum i {
+      color: #f22f2f; }
+  .accountList .listItme .proAllPay {
+    font-size: 14px;
+    width: 25%;
+    height: 0.625rem;
+    line-height: 0.625rem;
+    color: #404040; }
+    .accountList .listItme .proAllPay i {
+      color: #f22f2f; }
+
+.infoMid .charType {
+  width: 50%;
+  height: 0.625rem;
+  line-height: 0.625rem;
+  font-size: 14px;
+  color: #404040; }
+  .infoMid .charType i.type {
+    box-sizing: border-box;
+    border: 1px solid #ffaa16;
+    color: #ffaa16;
+    line-height: 0.46875rem;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0px 6px; }
+
+.infoMid .charStatue {
+  width: 50%;
+  height: 0.625rem;
+  line-height: 0.625rem;
+  font-size: 14px;
+  color: #404040; }
+  .infoMid .charStatue i.statue {
+    line-height: 0.46875rem;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0px 6px; }
+    .infoMid .charStatue i.statue.success {
+      border: 1px solid green;
+      color: green; }
+    .infoMid .charStatue i.statuefalse {
+      border: 1px solid #999;
+      color: #999; }
+
+.timeWrap .infoTime {
+  height: 0.625rem;
+  line-height: 0.70313rem;
+  font-size: 12px;
+  color: #999; }
+
+#titlecon {
+  position: relative; }
+  #titlecon #type {
+    display: block;
+    height: 0.875rem;
+    width: 30%;
+    float: right;
+    color: #666; }
+
+.serchForm {
+  height: 1.71875rem;
+  margin-bottom: 10px;
+  background: #fafafa; }
+  .serchForm .timeSel .timerCrl {
+    width: 50%;
+    border: none;
+    height: 0.9375rem;
+    line-height: 0.9375rem;
+    float: left;
+    box-sizing: border-box;
+    color: #666;
+    text-indent: 10px; }
+    .serchForm .timeSel .timerCrl.start {
+      text-align: left;
+      border-right: 1px solid #ddd; }
+    .serchForm .timeSel .timerCrl.stop {
+      text-align: right; }
+  .serchForm .timeSel span.span {
+    height: 0.78125rem;
+    color: #999;
+    line-height: 0.78125rem; }
+  .serchForm .timeSel.timeSel2 {
+    background: #eee; }

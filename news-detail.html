@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html style="background: #fff;">
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/global2.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>公告详情</title>
+</head>
+<body style="background: #fff;">
+
+<div class="detailWrap">
+    <div class="news_top">
+        <h2 class="newTitle fl">游戏公告</h2>
+        <a href="news-list.html" class="fr disbl feedBtn">返回列表</a>
+    </div>
+    <div class="newsitem-head"></div>
+    <div class="newsitem-info">
+        <span>来源：香蕉儿网络</span>
+        <span class="articleTime">日期：<span></span></span>
+    </div>
+    <div class="newsitem-text" style="min-height:400px;">
+        <p style="text-indent:28px">
+
+        </p>
+    </div>
+</div>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/layer/layer.js"></script>
+<script src="./js/plugin/swiper-3.3.1.min.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/global2.js"></script>
+<script>
+    $(function(){
+        var id = Util.getQueryString('id');
+//        alert(id);
+        $.ajax({
+            url:'/api/notice/get?id='+id,
+            type:'GET',
+            success:function(datas){
+                if(!datas.success){
+                    layer.msg(datas.msg)
+                    return;
+                }
+                var data = datas.obj;
+                $('.newsitem-text p').html(data.content);
+                $('.articleTime span').html(Util.formatDate(data.datetime));
+                $('.newsitem-head').html(data.title);
+            },
+            error:function(){
+                layer.msg('获取失败');
+            }
+        })
+    })
+</script>
+</body>
+
+</html>

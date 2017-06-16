@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/global2.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>农场提现</title>
+</head>
+<body style="background: #fff;">
+<div id="screenlayer"></div>
+<div class="banner ncTX w100 ovhd">
+    <div class="userHeaderWrap">
+        <div class="imgWrap">
+            <img id="head" src="./images/userheader.png" alt="">
+        </div>
+        <div class="userName">
+            <span id="nickname"></span>
+            <img src="./images/femaile.png" alt="">
+        </div>
+        <p class="userId">
+            ID <span id="playerid"></span>
+        </p>
+    </div>
+</div>
+<h3 class="tuiguangTitle" style="width: 96%;">
+    提现
+</h3>
+<div class="ncTxMain w100 ovhd">
+    <div class="ncTxMainCon">
+        <div class="w100 propInfo ovhd">
+            <div class="propInfoLeft fl h100">
+                <img src="./images/seedPic.png" alt="">
+            </div>
+            <div class="propInfoRight fr h100">
+                <div class="propInfoRightTop">
+                    <div class="numOpr">
+                        <div class="reduceLabel feedBtn">-</div>
+                        <input type="text" class="disbl numInpt">
+                        <div class="addLabel feedBtn">+</div>
+                    </div>
+                    <div class="maxBtn feedBtn">
+                        最大
+                    </div>
+                </div>
+                <p class="propTitle tl w100">
+                    果实介绍:
+                </p>
+                <div class="propDesc ovhd w100">
+                    恶魔果实恶魔果实恶魔果实恶魔果实恶魔果实恶魔果实恶魔果实恶魔果实
+                </div>
+                <div class="propValue">
+                    价值：<span class="moneyValue">10000.00元</span>
+                </div>
+            </div>
+        </div>
+        <div class="formWrap w100">
+            <div class="inputControl">
+                <div class="labelAdo">支付宝账号</div>
+                <input type="text" placeholder="请输入您绑定的支付宝账号" class="textInput">
+            </div>
+            <div class="inputControl">
+                <div class="labelAdo">姓名</div>
+                <input type="text" placeholder="请输入您的姓名" class="textInput">
+            </div>
+            <div class="inputControl">
+                <div class="labelAdo">验证码</div>
+                <input type="text" placeholder="请输入验证码" class="textInput">
+                <div class="verLabelAdo feedBtn">获取验证码</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footerSubBtn">
+    <div class="submit waves">提交</div>
+    <div class="cancel waves">取消</div>
+</div>
+<!--<footer id="footer" class="w100">
+    <div class="homeNav tc feedBtn" onclick="location='index.html'">
+        <img src="./images/home.png" class="disbl" alt="">
+        <p>首页</p>
+    </div>
+    <div class="tuiguangNav tc feedBtn" onclick="location='tuiguang.html'">
+        <img src="./images/tuiguang.png" class="disbl" alt="">
+        <p>推广</p>
+    </div>
+    <div class="myNav tc feedBtn" onclick="location='grzx.html'">
+        <img src="./images/person.png" class="disbl" alt="">
+        <p>个人</p>
+    </div>
+</footer>-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/global.js"></script>
+</body>
+
+</html>
+<script>
+
+    $(function () {
+        function getCenter(){
+            ajaxHelper.post(urlMap.centerUrl, {}, function (result) {
+                if (result.success) {
+                    $("#nickname").html(result.obj.nickname);
+                    $("#playerid").html(result.obj.playerId);
+                    $("#head").attr("src", "./images/head/head" + result.obj.pic + ".png");
+                } else {
+                    oauth.clean();
+                    alert(result.msg);
+                }
+            });
+        }
+        getCenter();
+//        $("#nickname").html(nickname);
+//        $("#playerid").html(playerid);
+//        $("#head").attr("src",header);
+    })
+
+</script>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8 />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/global2.css">
+    <link rel="stylesheet" href="./css/swiper-3.3.1.min.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <title>新闻公告</title>
+</head>
+<body style="background: #f8f8f8;">
+<div id="screenlayer"></div>
+<header id="idxheader">
+    <div class="conWrap">
+        <div class="myBaseInfo">
+            <img src="./images/user_headert.png" alt="">
+        </div>
+        <div class="textInfo">
+            <p class="name">超级水稻</p>
+            <p class="desc">香蕉儿荣誉出品</p>
+        </div>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="Util.goDownload()">立即下载</button>
+        <button class="downloadBtn disbl tc cl_w fr feedBtn" onclick="Util.goGame()" style="margin-right: 8px;">返回游戏</button>
+    </div>
+</header>
+<div class="slideBannner w100 ovhd">
+    <div class="swiper-container w100 h100">
+        <div class="swiper-wrapper w100 h100">
+            <div class="swiper-slide w100 h100">
+                <img src="./images/indexBanner.png" alt="">
+            </div>
+            <div class="swiper-slide w100 h100">
+                <img src="./images/indexBanner.png" alt="">
+            </div>
+            <div class="swiper-slide w100 h100">
+                <img src="./images/indexBanner.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<main id="newsList" class="w100 ovhd">
+    <ul class="annouListWrap ovhd">
+        <!--<dl class="w100 ovhd bg_w dlWrap">-->
+            <!--<li class="ovhd annouListItem">-->
+                <!--<h3 class="annoTitle">-->
+                    <!--<span class="red">[公告]</span>-->
+                    <!--服务器升级维护-->
+                <!--</h3>-->
+                <!--<p class="annoDesc">-->
+                    <!--为确保正常工作，为确保正常工作，为确保正常工作，为确保正常工作，为确保正常工作，为确保正常工作，-->
+                <!--</p>-->
+                <!--<p class="annoBot">-->
+                    <!--<time class="annoTime fl">2017/3/18 17:29</time>-->
+                    <!--<a href="###" class="lookMore fr">查看更多</a>-->
+                <!--</p>-->
+            <!--</li>-->
+        <!--</dl>-->
+        <!--<dl class="w100 ovhd bg_w dlWrap">-->
+            <!--<li class="ovhd annouListItem">-->
+                <!--<h3 class="annoTitle">-->
+                    <!--<span class="red">[公告]</span>-->
+                    <!--服务器升级维护-->
+                <!--</h3>-->
+                <!--<p class="annoDesc">-->
+                    <!--为确保正常工作，为确保正常工作，为确保正常工作，为确保正常工作，为确保正常工作，为确保正常工作，-->
+                <!--</p>-->
+                <!--<p class="annoBot">-->
+                    <!--<time class="annoTime fl">2017/3/18 17:29</time>-->
+                    <!--<a href="###" class="lookMore fr">查看更多</a>-->
+                <!--</p>-->
+            <!--</li>-->
+        <!--</dl>-->
+    </ul>
+</main>
+<footer id="footer" class="w100">
+    <div class="homeNav tc feedBtn" onclick="location='index.html'">
+        <img src="./images/home_0.png" class="disbl" alt="">
+        <p>游戏首页</p>
+    </div>
+    <div class="tuiguangNav tc feedBtn active" onclick="return">
+        <img src="./images/new_anno_0.png" class="disbl" alt="">
+        <p>新闻公告</p>
+    </div>
+    <div class="myNav tc feedBtn" onclick="location='game-desc.html'">
+        <img src="./images/game_desc.png" class="disbl" alt="">
+        <p>游戏介绍</p>
+    </div>
+    <div class="myNav tc feedBtn" onclick="location='grzx.html'">
+        <img src="./images/person.png" class="disbl" alt="">
+        <p>个人中心</p>
+    </div>
+</footer>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/layer/layer.js"></script>
+<script src="./js/plugin/swiper-3.3.1.min.js"></script>
+<script src="./js/myModule.js"></script>
+
+<script src="./js/index.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+
+<script src="./js/global2.js"></script>
+<script>
+    $(function(){
+        var myswiper = new Swiper('.slideBannner .swiper-container', {//启动swiper
+            slidesPerView:'auto',
+            autoplay:3000,
+            speed:1500,
+        })
+    })
+
+    $(function(){
+        function ListLoad(){};
+        //页面到达底部
+        ListLoad.prototype.pullBot = function(){
+            var wh = $(window).height();
+            var sct = $(window).scrollTop();
+            var dh = $(document).height();
+            if(wh+sct>dh-1){
+                //到达底部
+//                alert('ok');
+                return true;
+            }
+            //没有
+            return false;
+        }
+        var isLoading = false;
+        var pageNum = 1
+        ListLoad.prototype.getData = function(pgnum){
+            var pgnum = pageNum||1;
+            var url = '/api/notice/list';
+            var that = this;
+            if(!isLoading){
+                isLoading = true;
+                $.ajax({
+                    url:url,
+                    type:'GET',
+                    data:{pageNum:pgnum},
+                    success:function(datas){
+                        console.log(datas);
+                        if(!datas.success){
+                            layer.msg(datas.msg);
+                            return
+                        }
+                        var data = datas.obj.records
+                        console.log(data)
+                        if(data.length){
+                            var _html = "";
+                            for(var i = 0;i<data.length;i++){
+                                _html+='<dl class="w100 ovhd bg_w dlWrap">'+
+                                        '<li class="ovhd annouListItem">'+
+                                        '<h3 class="annoTitle">'+
+                                        '<span class="red">[公告]</span>'+
+                                        data[i].title+
+                                        '</h3>'+
+                                        '<p class="annoDesc" style="font-size: 12px;text-indent: 20px;line-height: 25px;">'+
+                                        data[i].content+
+                                        '</p>'+
+                                        '<p class="annoBot" style="font-size: 12px;">'+
+                                        '<time class="annoTime fl">'+formatTime(data[i].datetime)+'</time>'+
+                                        '<a href="news-detail.html?id='+data[i].id+'"class="lookMore fr" style="font-size: 12px;">查看详情</a>'+
+                                        '</p>'+
+                                        '</li>'+
+                                        '</dl>'
+                            }
+                            $(".annouListWrap").append(_html);
+
+                        }
+                        isLoading = false;
+                        pageNum++
+                    },
+                    beforeSend: function (request) {
+                        request.setRequestHeader("Authorization", 'bearer ' + oauth.getToken());
+                    },
+                    error:function(){
+                        layer.msg('获取失败')
+                    }
+                })
+            }
+        }
+        var listLoad = new ListLoad();
+        listLoad.getData(1);
+        $(window).scroll(function(){
+            var isbot = listLoad.pullBot();
+            if(isbot){
+                listLoad.getData();
+            }
+        })
+    })
+</script>
+</body>
+
+</html>

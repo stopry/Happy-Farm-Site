@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html style="background: #f8f8f8;">
+<head>
+    <meta charset=utf-8/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="icon" href="./images/fav.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/global2.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/hearder.css">
+    <script src="./js/rem/flexible.css.js"></script>
+    <script src="./js/rem/flexible.ios.js"></script>
+    <style type="text/css">
+        html {
+            margin: 0 auto; }
+        * {
+            max-width: 500px; }
+        .cansend {
+            background: #71AFE8;
+        }
+
+    </style>
+    <title>用户登陆</title>
+</head>
+<body style="background: #fff;">
+<header id="header" class="newHeader">
+    <!--<div style="width: 1%;float: left"><</div>-->
+    <div onclick="location='index.html'" class="logo">
+        <img src="images/logo.png" style="height: 25px;margin-top: -10px;">
+    </div>
+    <div class="acctInfo">
+        <div onclick="location='grzx.html'" class="logined">用户中心</div>
+        <div onclick="location='index.html';oauth.clean()" class="loginOut">退出</div>
+    </div>
+</header>
+<div id="content" style="margin-top: 48px;">
+    <div id="screenlayer"></div>
+    <h3 class="tuiguangTitle">
+        用户登陆
+    </h3>
+    <div class="ncTxMain w100 ovhd">
+        <div class="ncTxMainCon">
+            <div class="formWrap w100">
+                <div class="inputControl">
+                    <div class="labelAdo">手机号</div>
+                    <input id="mobile" type="text" placeholder="手机号" class="textInput">
+                </div>
+                <div class="inputControl">
+                    <div class="labelAdo">密码</div>
+                    <input id="pwd" type="password" placeholder="请输入密码" class="textInput">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footerSubBtn" style="margin: 0 auto;">
+        <div class="submit waves" id="commitBtn">确定</div>
+    </div>
+    <div style="margin: 0.1rem auto;width: 90%;height: 0.6rem;line-height: 0.6rem;margin-top: -0.4rem">
+        <span onclick="location='reg.html'" style="color: #888888;margin-top: 5px;">用户注册</span>
+    </div>
+</div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/layer/layer.js"></script>
+<script src="./js/myModule.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/common.js"></script>
+<script>
+    $(function () {
+
+        function fixedObjStyle(){
+            var h = parseInt( $(window).width());
+            var f_width = parseInt($('.footerSubBtn').width());
+            $('.footerSubBtn').css('left',(h-f_width)/2+'px');
+        }
+        fixedObjStyle()
+        $(window).resize(function(){
+            fixedObjStyle();
+        })
+
+        $('#commitBtn').on('click', function () {
+            var mobile = $("#mobile").val();
+            if (!Util.checkMobile(mobile)) {
+                layer.msg('请输入正确的手机号码');
+                return;
+            }
+            var pwd = $.trim($("#pwd").val());
+            if (pwd == '' || pwd == null || pwd.length < 6) {
+                layer.msg('请输入6位数以上的密码');
+                return;
+            }
+            var data = {
+                "captchaCode": " ",
+                "captchaValue": " ",
+                "clientId": "098f6bcd4621d373cade4e832627b4f6",
+                "login_channel": " ",
+                "password": pwd,
+                "userName": mobile
+            }
+            ajaxHelper.post(urlMap.login, data, function (result) {
+                if (result.success) {
+                    layer.msg('登陆成功');
+                    localStorage.setItem('AUTHORIZATION', result.obj.access_token);
+                    location = "grzx.html";
+                } else {
+                    layer.msg(result.msg);
+                }
+            });
+        });
+    });
+
+
+</script>
+</body>
+
+</html>
